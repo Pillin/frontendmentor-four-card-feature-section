@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200,400,600"
+      rel="stylesheet"
+    />
 
     <link
       rel="icon"
@@ -16,31 +20,140 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      .attribution {
-        font-size: 11px;
+      :root {
+        --red: hsl(0, 78%, 62%);
+        --cyan: hsl(180, 62%, 55%);
+        --orange: hsl(34, 97%, 64%);
+        --blue: hsl(212, 86%, 64%);
+        --grayish-blue: hsl(229, 6%, 66%);
+        --light-gray: hsl(0, 0%, 98%);
+        --dark-blue: hsl(234, 12%, 34%);
+        --size-mobile: 375px;
+        --size-desktop: 1440px;
+        --font-size: 15px;
+        --font-weight-1: 200;
+        --font-weight-2: 400;
+        --font-weight-3: 600;
+        --font-family: "Poppins";
+        --box-width: 400px;
+        --box-height: 260px;
+        --container-width: 1110px;
+      }
+
+      @media screen and (max-width: 375px) {
+        :root {
+          --box-width: 100%;
+          --box-height: 260px;
+          --container-width: 300px;
+        }
+      }
+      body {
+        box-sizing: border-box;
+        margin: 0px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-1);
+        color: var(--dark-blue);
+      }
+      .container {
+        display: flex;
+        width: 100vw;
+        padding: 20px 20px;
+        flex-direction: column;
+        align-items: center;
+      }
+      .header h1 {
+        font-weight: var(--font-weight-3);
         text-align: center;
       }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
+      .header h2 {
+        font-weight: var(--font-weight-2);
+        text-align: center;
+      }
+      .header p {
+        font-size: var(--font-size);
+        text-align: center;
+      }
+      .box {
+        position: relative;
+        width: var(--box-width);
+        height: var(--box-height);
+        box-shadow: 0px 8px 16px 0px var(--grayish-blue);
+        margin: 16px 0px;
+        border-radius: 5px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .box::before {
+        content: " ";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        justify-content: center;
+        background: hsl(0, 78%, 62%);
+        height: 5px;
+        width: 100%;
+      }
+      .box h3 {
+        font-weight: var(--font-weight-3);
+        font-size: var(--font-size);
+      }
+      .box span {
+        font-size: var(--font-size);
+      }
+      .box img {
+        align-self: flex-end;
+        height: 80px;
+        width: 80px;
+        margin: 0px 0px 32px 0px;
+        bottom: 0px;
+        position: absolute;
       }
     </style>
   </head>
   <body>
-    Reliable, efficient delivery Powered by Technology Our Artificial
-    Intelligence powered tools use millions of project data points to ensure
-    that your project is successful Supervisor Monitors activity to identify
-    project roadblocks Team Builder Scans our talent network to create the
-    optimal team for your project Karma Regularly evaluates our talent to ensure
-    quality Calculator Uses data from past projects to provide better delivery
-    estimates
-
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </p>
-    </footer>
+    <section class="container">
+      <section class="header">
+        <h2>Reliable, efficient delivery</h2>
+        <h1>Powered by Technology</h1>
+        <p>
+          Our Artificial intelligent powered tools use millions of project data
+          points to ensure that your project is successful
+        </p>
+      </section>
+      <section class="main">
+        <section class="box">
+          <h3>Supervisor</h3>
+          <span>Monitors activity to identify project roadblocks</span>
+          <img src="/images/icon-supervisor.svg" />
+        </section>
+        <section class="box">
+          <h3>Team Builder</h3>
+          <span
+            >Scans our talent network to create the optimal team for your
+            project</span
+          >
+          <img src="/images/icon-team-builder.svg" />
+        </section>
+        <section class="box">
+          <h3>Karma</h3>
+          <span>Regularly evaluates our talent to ensure quality</span>
+          <img src="/images/icon-karma.svg" />
+        </section>
+        <section class="box">
+          <h3>Calculator</h3>
+          <span
+            >Uses data from past projects to provide better delivery
+            estimates</span
+          >
+          <img src="/images/icon-calculator.svg" />
+        </section>
+      </section>
+    </section>
   </body>
 </html>
